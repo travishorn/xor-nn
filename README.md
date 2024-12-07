@@ -28,7 +28,7 @@ To get started with this project, follow these steps:
    cd xor-nn
    ```
 
-2. Install dependencies (if any):
+2. Install dependencies (if you want to run linting and formatting):
 
    ```bash
    npm install
@@ -41,25 +41,27 @@ in your JavaScript code. Here's a basic example of how to initialize, train, and
 test the neural network:
 
 ```javascript
-import { initializeNetwork, train, test } from './index.js';
+import { initializeNetwork, train, test } from "./index.js";
 
 // Define your training data
 const trainingData = [
-{ inputs: [0, 0], targets: [0] },
-{ inputs: [0, 1], targets: [1] },
-{ inputs: [1, 0], targets: [1] },
-{ inputs: [1, 1], targets: [0] },
+  { inputs: [0, 0], targets: [0] },
+  { inputs: [0, 1], targets: [1] },
+  { inputs: [1, 0], targets: [1] },
+  { inputs: [1, 1], targets: [0] },
 ];
 
 // Initialize the network
-const network = initializeNetwork(2, 2, 1, 'gaussian');
+const network = initializeNetwork(2, 2, 1, "gaussian");
 
 // Train the network
 const trainedNetwork = train(network, trainingData, 50000, 0.1, true);
 
 // Test the network
 const testResults = test(trainedNetwork, trainingData);
-console.log(Correct Predictions: ${testResults.correctPredictions}/${testResults.totalTests});
+console.log(
+  `Correct Predictions: ${testResults.correctPredictions}/${testResults.totalTests}`,
+);
 ```
 
 ## Contributing
